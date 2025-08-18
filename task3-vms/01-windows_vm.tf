@@ -7,7 +7,7 @@ resource "google_compute_instance" "windows_vm" {
 
   boot_disk {
     initialize_params {
-      image = var.windows_vm_config.disk_image
+      image = "projects/windows-cloud/global/images/family/windows-2019"
     }
   }
 

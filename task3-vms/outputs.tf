@@ -23,6 +23,9 @@ output "member2_linux_internal_ip" {
 
 #Firewall Status
 output "firewall_rules_created" {
-  value = [for rule in google_compute_firewall.firewall_rules : rule.name]
+  value = [
+    google_compute_firewall.member1_allow_ssh.name,
+    google_compute_firewall.member2_allow_ssh.name
+    ]
   description = "List of firewall rules for VM access"
 }

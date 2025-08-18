@@ -29,7 +29,7 @@ resource "google_compute_firewall" "member1_allow_ssh" {
 
   allow {
     protocol = "tcp"
-    port = "22"
+    ports    = ["22"]
   }
 
   source_tags = ["windows-vm"]

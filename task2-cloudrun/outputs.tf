@@ -12,12 +12,12 @@ output "cloud_run_public_access" {
 
 # Service Location
 output "cloud_run_location" {
-  value = google_cloud_run_service.dev_app.location
+  value = google_cloud_run_service.app.location
   description = "Deployment region of the Cloud Run service"
 }
 
 # Latest Revision Status
 output "latest_revision_status" {
-  value = google_cloud_run_service.dev_app.status[0].condtions[0].status
+  value = google_cloud_run_service.app.status[0].conditions[0].status
   description = "Health status of the latest revision ('True' = healthy)"
 }

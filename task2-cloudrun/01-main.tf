@@ -15,6 +15,7 @@ resource "google_cloud_run_service" "app" {
 # Cloud Run IAM Public Access
 resource "google_cloud_run_service_iam_member" "public_access" {
   service = google_cloud_run_service.app.name
+  location = var.cloud_run_region
   role = "roles/run.invoker"
   member = "allUsers"
 }
